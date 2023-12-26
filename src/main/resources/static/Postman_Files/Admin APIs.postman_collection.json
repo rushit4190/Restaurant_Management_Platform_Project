@@ -1,0 +1,700 @@
+{
+	"info": {
+		"_postman_id": "c558cd06-14e7-4720-92b7-142603e337c5",
+		"name": "Admin APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30201486"
+	},
+	"item": [
+		{
+			"name": "Restaurant development APIs",
+			"item": [
+				{
+					"name": "Create Restaurant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzU5ODc2OSwiZXhwIjoxNzM1MTM0NzY5fQ._fXWLfyW7hvngYj3C9PgRma4-zpk_2ldjYo0lNey8g4xJWRXLC1tfet5zy_Z4idy"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"test2\",\n    \"description\":\"test to check delete api\",\n    \"averageCost\": 400,\n    \"phoneNo\":\"123456\",\n    \"rating\": 4.2,\n    \"totalRating\": 1100,\n    \"restaurantAddress\":{\n        \"city\": \"Bengaluru\",\n        \"area\":\"Bilekahalli\",\n        \"street\":\"\",\n        \"houseNo\":\"\",\n        \"buildingNo\":\"\",\n        \"landmark\":\"\",\n        \"pincode\":\"560076\",\n        \"location\":{\n            \"x\": 57.3,\n            \"y\": 117.1\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload restaurant poster",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJydXNoaXQ0MTk3QGdtYWlsLmNvbSIsImlhdCI6MTcwMzMxNDE5MSwiZXhwIjoxNzM0ODUwMTkxfQ.axryt3p_VVBppIbjxS2nU3R-6lZVmoZAHNTPFeHqBTJteojlDKvOOdBn1JHFrKMl"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poster",
+									"description": "Restaurant poster file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "restaurantId",
+									"value": "",
+									"description": "Id of the restaurant to edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/poster"
+					},
+					"response": []
+				},
+				{
+					"name": "Add cuisine to restaurant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cuisineName",
+									"value": "Biryani",
+									"description": "name of cuisine to add",
+									"type": "text"
+								},
+								{
+									"key": "restaurantId",
+									"value": "0f84ffbc-7e4a-46ad-bb4b-8593ff5c5126",
+									"description": "Id of the restaurant to edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/cuisine"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete restaurant review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzU5ODc2OSwiZXhwIjoxNzM1MTM0NzY5fQ._fXWLfyW7hvngYj3C9PgRma4-zpk_2ldjYo0lNey8g4xJWRXLC1tfet5zy_Z4idy"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/reviews/:reviewId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"restaurant",
+								"reviews",
+								":reviewId"
+							],
+							"variable": [
+								{
+									"key": "reviewId",
+									"value": "d24508e0-ad30-43cf-8943-9d921d433990",
+									"description": "Id of the review to delete"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Restaurant Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"name\":\"\",\n    \"description\":\"delicious gujarati food\",\n    \"averageCost\": null,\n    \"phoneNo\":\"\",\n    \"rating\": null,\n    \"totalRating\": null,\n    \"restaurantAddress\":null\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/:restaurantId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"restaurant",
+								":restaurantId"
+							],
+							"variable": [
+								{
+									"key": "restaurantId",
+									"value": "29ec3d01-d8ee-4994-8834-ce8539182142",
+									"description": "Id of the restaurant to update"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload restaurant image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJydXNoaXQ0MTk3QGdtYWlsLmNvbSIsImlhdCI6MTcwMzMxNDE5MSwiZXhwIjoxNzM0ODUwMTkxfQ.axryt3p_VVBppIbjxS2nU3R-6lZVmoZAHNTPFeHqBTJteojlDKvOOdBn1JHFrKMl"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imageFile",
+									"description": "Image of restaurant to upload",
+									"type": "file",
+									"src": "/Users/rushit/Documents/Study/Coding/NextLeap/Restaurant_Management_Platform_Project/src/main/resources/static/Restaurant_Images/subway.jpg"
+								},
+								{
+									"key": "restaurantId",
+									"value": "2101e678-4c79-4466-b6e4-f47a096d1f8e",
+									"description": "Id of restaurant",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/image"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete restaurant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzU5ODc2OSwiZXhwIjoxNzM1MTM0NzY5fQ._fXWLfyW7hvngYj3C9PgRma4-zpk_2ldjYo0lNey8g4xJWRXLC1tfet5zy_Z4idy"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/:restaurantId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"restaurant",
+								":restaurantId"
+							],
+							"variable": [
+								{
+									"key": "restaurantId",
+									"value": "29ec3d01-d8ee-4994-8834-ce8539182142",
+									"description": "Enter the restaurant id to delete"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuisine development APIs",
+			"item": [
+				{
+					"name": "Create cuisine",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJydXNoaXQ0MTk3QGdtYWlsLmNvbSIsImlhdCI6MTcwMzMxNDE5MSwiZXhwIjoxNzM0ODUwMTkxfQ.axryt3p_VVBppIbjxS2nU3R-6lZVmoZAHNTPFeHqBTJteojlDKvOOdBn1JHFrKMl"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"name\": \"Bakery\",\n    \"description\": \"Explore our bakery offerings for a delightful array of freshly baked goods, including bread, pastries, cookies, and other treats made with quality ingredients and expert craftsmanship.\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/cuisine/"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload cuisine poster",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJydXNoaXQ0MTk3QGdtYWlsLmNvbSIsImlhdCI6MTcwMzMxNDE5MSwiZXhwIjoxNzM0ODUwMTkxfQ.axryt3p_VVBppIbjxS2nU3R-6lZVmoZAHNTPFeHqBTJteojlDKvOOdBn1JHFrKMl"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poster",
+									"description": "Cuisine poster file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "cuisineName",
+									"value": "",
+									"description": "Name of the cuisine to edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/cuisine/poster"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu Food Item development APIs",
+			"item": [
+				{
+					"name": "Create menu category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Menu test 1\",\n    \"restaurantId\":\"29ec3d01-d8ee-4994-8834-ce8539182142\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Food Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"test food 1\",\n    \"description\":\"\",\n    \"veg\" : false,\n    \"price\": 316.0,\n    \"rating\": 0.0,\n    \"totalRating\": 0,\n    \"available\": true,\n    \"menuCategoryId\":\"0aa68229-ba22-4b37-99ea-5270a292c99b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory/fooditem"
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Food item poster",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJydXNoaXQ0MTk3QGdtYWlsLmNvbSIsImlhdCI6MTcwMzMxNDE5MSwiZXhwIjoxNzM0ODUwMTkxfQ.axryt3p_VVBppIbjxS2nU3R-6lZVmoZAHNTPFeHqBTJteojlDKvOOdBn1JHFrKMl"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poster",
+									"description": "Food item poster file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "foodItemId",
+									"value": "",
+									"description": "Id of the food item to edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory/fooditem/poster"
+					},
+					"response": []
+				},
+				{
+					"name": "Create customization category for the food item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Choose grill\",\n    \"foodItemId\":\"858fd49d-a999-4e26-8af9-d7ee3397f8a8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory/fooditem/customizationcategory"
+					},
+					"response": []
+				},
+				{
+					"name": "Create customization for the customization category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Grilled\",\n    \"priceModifier\":20.0,\n    \"available\":true,\n    \"customizationCategoryId\": \"acb0576e-2cd0-4e7b-9a73-26e15b6deb27\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory/fooditem/customizationcategory/customization"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Food Item data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"\",\n    \"description\":\"200\",\n    \"veg\" : true,\n    \"price\": 120.0,\n    \"rating\": 0.0,\n    \"totalRating\": 0,\n    \"available\": true,\n    \"menuCategoryId\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory/fooditem/:foodItemId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"restaurant",
+								"menucategory",
+								"fooditem",
+								":foodItemId"
+							],
+							"variable": [
+								{
+									"key": "foodItemId",
+									"value": "d632bab2-aabf-414e-a885-ab81d224e7bd",
+									"description": "Id of the foodItem to update"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Food Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/restaurant/menucategory/fooditem/:foodItemId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"restaurant",
+								"menucategory",
+								"fooditem",
+								":foodItemId"
+							],
+							"variable": [
+								{
+									"key": "foodItemId",
+									"value": "4e5fc42c-1e5a-4bcd-84d8-f027929bf39a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manage Users APIs",
+			"item": [
+				{
+					"name": "Get user by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/users/:userId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "9706adc2-52e2-41b3-b7c6-c819869d2f96",
+									"description": "Enter Id of user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJydXNoaXQ0MTk3QGdtYWlsLmNvbSIsImlhdCI6MTcwMzMzMjI0OSwiZXhwIjoxNzM0ODY4MjQ5fQ.GC9bIeg0XrvBeGo2TR-h3JEkQTzY1jgZO9O8GBaxrFCiSvtuIQ_69Xrbm7heNNre"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/users/email/:userEmail",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"users",
+								"email",
+								":userEmail"
+							],
+							"variable": [
+								{
+									"key": "userEmail",
+									"value": "rushit214@gmail.com",
+									"description": "Enter email of the user"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzU5ODc2OSwiZXhwIjoxNzM1MTM0NzY5fQ._fXWLfyW7hvngYj3C9PgRma4-zpk_2ldjYo0lNey8g4xJWRXLC1tfet5zy_Z4idy"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userEmail",
+									"value": "trj765@gmail.com",
+									"description": "Enter the email id of user to delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJkdW1teUFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDczMiwiZXhwIjoxNzM1MTQ2NzMyfQ.BuGy-6JcnGI4bOjKUdXB1c84HMfZjeMbYpMXAScSMg5YMjaSCHodonW49TCrV3at"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/admin/users/?pageNo&pageSize=9",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"admin",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": null,
+									"description": "Enter the page number, by default it is 0"
+								},
+								{
+									"key": "pageSize",
+									"value": "9",
+									"description": "Enter the page Size, by default it is 3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

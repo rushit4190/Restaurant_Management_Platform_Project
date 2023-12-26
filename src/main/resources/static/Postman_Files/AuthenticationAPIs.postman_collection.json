@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "005a834c-0f54-44a1-9c9e-8bb563c6b2ed",
+		"name": "AuthenticationAPIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30201486"
+	},
+	"item": [
+		{
+			"name": "User register request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"trj765@gmail.com\",\n    \"firstName\": \"T\",\n    \"lastName\" : \"C\",\n    \"password\" : \"4197\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/register"
+			},
+			"response": []
+		},
+		{
+			"name": "User authentication request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"dummyAdmin@gmail.com\",\n    \"password\" : \"4197\"\n}\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "Jwt token test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJzdWIiOiJydXNoaXRqYXZpYUBnbWFpbC5jb20iLCJpYXQiOjE3MDM0MTkyODAsImV4cCI6MTczNDk1NTI4MH0.70DI9Tp_wj9bX4QNIYUgz5ybd83tPK9b6Qj7LAIgqaBvwKoFQEpYYM0y268_ByAV"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/checkout"
+			},
+			"response": []
+		}
+	]
+}

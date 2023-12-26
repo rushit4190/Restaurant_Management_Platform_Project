@@ -1,0 +1,7 @@
+Dummy Customer -
+    email - dummyCustomer@gmail.com
+    password - 4197
+
+Dummy Admin -
+    email - dummyAdmin@gmail.com
+    password - 4197

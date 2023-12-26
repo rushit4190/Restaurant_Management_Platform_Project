@@ -1,0 +1,8 @@
+package com.NextLeap.Restaurant_Management_Platform_Project.Services;
+
+import com.NextLeap.Restaurant_Management_Platform_Project.Models.Customization.DTO.CustomizationCategoryBuilderDTO;
+import com.NextLeap.Restaurant_Management_Platform_Project.Models.Customization.Entity.CustomizationCategory;
+
+public interface CustomizationCategoryService {
+    CustomizationCategory createCustomizationCategory(CustomizationCategoryBuilderDTO customizationCategoryBuilderDTO);
+}

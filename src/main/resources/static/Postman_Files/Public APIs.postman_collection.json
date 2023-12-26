@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "6d6ba303-efbe-4055-93fe-60168376a461",
+		"name": "Public APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30201486"
+	},
+	"item": [
+		{
+			"name": "Restaurant Detail APIs",
+			"item": [
+				{
+					"name": "Get restaurant by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/id/:restaurantId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								"id",
+								":restaurantId"
+							],
+							"variable": [
+								{
+									"key": "restaurantId",
+									"value": "a396d93e-d1f3-4b23-a621-2e33d37382a6",
+									"description": "Id of the restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/name/:name",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								"name",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "Subway",
+									"description": "Name of the restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/:restaurantId/menu",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								":restaurantId",
+								"menu"
+							],
+							"variable": [
+								{
+									"key": "restaurantId",
+									"value": "29ec3d01-d8ee-4994-8834-ce8539182142",
+									"description": "Id of the restaurant to fetch the menu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/:restaurantId/reviews?pageNo=&pageSize=",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								":restaurantId",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "Enter page number, by default it is 0 "
+								},
+								{
+									"key": "pageSize",
+									"value": "",
+									"description": "Enter page size, by default it is 2"
+								}
+							],
+							"variable": [
+								{
+									"key": "restaurantId",
+									"value": "2101e678-4c79-4466-b6e4-f47a096d1f8e",
+									"description": "Id of the restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get food items from the menu category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/menucategory/:menuCategoryId",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								"menucategory",
+								":menuCategoryId"
+							],
+							"variable": [
+								{
+									"key": "menuCategoryId",
+									"value": "b1357508-c887-4942-bb3d-671114274087",
+									"description": "Id of the menu category"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurant images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/:restaurantId/image",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								":restaurantId",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "restaurantId",
+									"value": "2101e678-4c79-4466-b6e4-f47a096d1f8e",
+									"description": "Id of restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Landing Page APIs",
+			"item": [
+				{
+					"name": "Get Cuisines by pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/cuisines?pageNo=&pageSize=3",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"cuisines"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "Enter page number , by default it is 0"
+								},
+								{
+									"key": "pageSize",
+									"value": "3",
+									"description": "Enter page size, by default it is 5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants via pagination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants?pageNo=&pageSize=",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "Enter page number, by default it is 0"
+								},
+								{
+									"key": "pageSize",
+									"value": "",
+									"description": "Enter page size, by default it is 4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurants by filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/filter?cuisines=salad,south indian&ratingThreshold=&averageCostMin=150&averageCostMax=&sortBy=averageCost&sortOrder=ASC&pageNo=&pageSize=",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "cuisines",
+									"value": "salad,south indian",
+									"description": "List of cuisine names to filter restaurants. Default is empty string. For multiple cuisines format -\n\"Biryani,North India,Burger\""
+								},
+								{
+									"key": "ratingThreshold",
+									"value": "",
+									"description": "To filter restaurants with ratings more than the key. Default value is 0"
+								},
+								{
+									"key": "averageCostMin",
+									"value": "150",
+									"description": "To filter restaurants with averageCost greater than the key. Default value is 0"
+								},
+								{
+									"key": "averageCostMax",
+									"value": "",
+									"description": "To filter restaurants with averageCost less than the key. Default value is 100000."
+								},
+								{
+									"key": "sortBy",
+									"value": "averageCost",
+									"description": "Can be 'rating' or 'averageCost'. Default value is 'rating"
+								},
+								{
+									"key": "sortOrder",
+									"value": "ASC",
+									"description": "Can be 'ASC' or 'DESC'. Default value is 'DESC'"
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "Enter page number, by default it is 0"
+								},
+								{
+									"key": "pageSize",
+									"value": "",
+									"description": "Enter page size, by default it is 5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get restaurants by cuisine filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/cuisine/filter?cuisines=cake,pizza&pageNo=&pageSize",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"restaurants",
+								"cuisine",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "cuisines",
+									"value": "cake,pizza",
+									"description": "List of cuisine names to filter restaurants. Default is empty string. For multiple cuisines, format -\n\"Biryani,North India,Burger\""
+								},
+								{
+									"key": "pageNo",
+									"value": "",
+									"description": "Enter page number, by default it is 0"
+								},
+								{
+									"key": "pageSize",
+									"value": null,
+									"description": "Enter page size, by default it is 1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search Restaurants, Dish",
+			"item": [
+				{
+					"name": "Search foodItems using search term",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/search/fooditems?searchTerm=pan",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"search",
+								"fooditems"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "pan",
+									"description": "Enter the search text"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search restaurants using search term",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/search/restaurants?searchTerm=the",
+							"protocol": "http",
+							"host": [
+								"restaurant-management-platform-env",
+								"eba-f86mdmbm",
+								"us-east-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"restaurant-platform",
+								"v1",
+								"search",
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "the",
+									"description": "Enter the search text"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check network connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Top restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/top?pageNo=&pageSize=",
+					"protocol": "http",
+					"host": [
+						"restaurant-management-platform-env",
+						"eba-f86mdmbm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"restaurant-platform",
+						"v1",
+						"restaurants",
+						"top"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "",
+							"description": "Enter the page number, by default its 0"
+						},
+						{
+							"key": "pageSize",
+							"value": "",
+							"description": "Enter the page size, by default it is 10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

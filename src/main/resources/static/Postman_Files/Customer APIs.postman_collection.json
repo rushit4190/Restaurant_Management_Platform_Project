@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "aaec4578-2093-44d8-b162-c35ec832d244",
+		"name": "Customer APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30201486"
+	},
+	"item": [
+		{
+			"name": "Create a Restaurant review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJzdWIiOiJ0cmoyMTRAZ21haWwuY29tIiwiaWF0IjoxNzAzNDIwNzQ2LCJleHAiOjE3MzQ5NTY3NDZ9.h5eu78va3R2n61Cc7jB1cWHVQ_5s2ij40GPR9OUA_NYgCUWzb-Vq_ijw-e0hh68S"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\" : 1,\n    \"comment\": \"test review 1\",\n    \"userEmail\": \"trj214@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/:restaurantId/reviews",
+					"protocol": "http",
+					"host": [
+						"restaurant-management-platform-env",
+						"eba-f86mdmbm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"restaurant-platform",
+						"v1",
+						"restaurants",
+						":restaurantId",
+						"reviews"
+					],
+					"variable": [
+						{
+							"key": "restaurantId",
+							"value": "29ec3d01-d8ee-4994-8834-ce8539182142"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update restaurant rating",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJzdWIiOiJkdW1teUN1c3RvbWVyQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDQxOCwiZXhwIjoxNzM1MTQ2NDE4fQ.vLqnZuFcpedQZ7pTQivzxTAC3jV2nfvNZY452g0Bq40DXx5EBTiu6S6eunblZlfH"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customerRating",
+							"value": "4",
+							"description": "Enter integer between 1-5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/:restaurantId/rating",
+					"protocol": "http",
+					"host": [
+						"restaurant-management-platform-env",
+						"eba-f86mdmbm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"restaurant-platform",
+						"v1",
+						"restaurants",
+						":restaurantId",
+						"rating"
+					],
+					"variable": [
+						{
+							"key": "restaurantId",
+							"value": "c6371ca3-f51c-4f1e-96d5-2e42ece2e1e9",
+							"description": "Id of the restaurant"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update FoodItem rating",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJzdWIiOiJkdW1teUN1c3RvbWVyQGdtYWlsLmNvbSIsImlhdCI6MTcwMzYxMDQxOCwiZXhwIjoxNzM1MTQ2NDE4fQ.vLqnZuFcpedQZ7pTQivzxTAC3jV2nfvNZY452g0Bq40DXx5EBTiu6S6eunblZlfH"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customerRating",
+							"value": "5",
+							"description": "Enter integer between 1-5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://restaurant-management-platform-env.eba-f86mdmbm.us-east-1.elasticbeanstalk.com/restaurant-platform/v1/restaurants/menucategory/:foodItemId/rating",
+					"protocol": "http",
+					"host": [
+						"restaurant-management-platform-env",
+						"eba-f86mdmbm",
+						"us-east-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"restaurant-platform",
+						"v1",
+						"restaurants",
+						"menucategory",
+						":foodItemId",
+						"rating"
+					],
+					"variable": [
+						{
+							"key": "foodItemId",
+							"value": "36d276c5-8f3f-4b7d-8563-6b1a22a502c8",
+							"description": "Id of foodItem"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
