@@ -16,7 +16,7 @@ An online restaurant management platform application having backend REST API mad
 
 ### Features:
 
-* 3 types of Users: Guest, Customer, and Admin.
+* 3 types of Users: Guest, Customer, and Admin. (Dummy user and admin info can be found at [User_Info.txt](src/main/resources/static/User_Info.txt))
 * Account signup and Login using personal details.
 * JWT token generated for future authentication purposes upon successful login.
 * 3 sets of API groups based on types of users.
